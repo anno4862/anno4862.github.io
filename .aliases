@@ -1,0 +1,1 @@
+alias hugo='docker run --rm -p 1313:1313 -v $(pwd):/src docker.io/hugomods/hugo:debian-ci-non-root'

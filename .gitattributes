@@ -28,6 +28,12 @@
 *.yml               text
 
 #
+# Linux files which always have LF line endings at checkout
+#
+.aliases            text eol=lf
+
+#
 # Never perform LF normalization
 #
 *.jpg               binary
+
