@@ -29,8 +29,8 @@ theme = 'hugo-theme-m10c'
     url = "https://github.com/anno4862"
 
 [params.style]
-  darkestColor = "#315659"
-  darkColor = "#253031"
-  lightColor = "#96a879"
-  lightestColor = "#fff"
-  primaryColor = "#dad865"
+  darkestColor = "#153032"
+  darkColor = "#1c2526"
+  lightColor = "#87b177"
+  lightestColor = "#ddd"
+  primaryColor = "#c8c42a"
