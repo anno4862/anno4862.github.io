@@ -37,4 +37,4 @@
 # Never perform LF normalization
 #
 *.jpg               binary
-
+*.png               binary

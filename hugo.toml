@@ -23,6 +23,7 @@ theme = 'hugo-theme-m10c'
   author = "Ben Hattem"
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   menu_item_separator = " - "
+  avatar = "avatar.png"
   [[params.social]]
     icon = "brand-github"
     name = "Github"
