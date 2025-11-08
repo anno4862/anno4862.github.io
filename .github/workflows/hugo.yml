@@ -20,8 +20,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      HUGO_CACHEDIR: "${{ runner.temp }}/hugo_cache"
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -44,19 +42,19 @@ jobs:
         id: cache-restore
         uses: actions/cache/restore@v4
         with:
-          path: "${{ env.HUGO_CACHEDIR }}"
+          path: ${{ runner.temp }}/hugo_cache
           key: hugo-${{ github.run_id }}
       - name: Build Blog
         run: |
           hugo \
           --minify
           --baseURL "${{ steps.pages.outputs.base_url }}/" \
-          --cacheDir "${{ env.HUGO_CACHEDIR }}"
+          --cacheDir ${{ runner.temp }}/hugo_cache
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v4
         with:
-          path: "${{ env.HUGO_CACHEDIR }}"
+          path: ${{ runner.temp }}/hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Upload static files as artifact
         id: deployment
