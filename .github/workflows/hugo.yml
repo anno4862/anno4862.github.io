@@ -47,7 +47,7 @@ jobs:
       - name: Build Blog
         run: |
           hugo \
-          --minify
+          --minify \
           --baseURL "${{ steps.pages.outputs.base_url }}/" \
           --cacheDir ${{ runner.temp }}/hugo_cache
       - name: Cache save
