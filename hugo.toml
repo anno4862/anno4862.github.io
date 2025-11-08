@@ -1,7 +1,7 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
-theme = 'hugo-theme-m10c'
+theme = 'hugo-m10c-benh'
 
 [menus]
   [[menus.main]]
@@ -23,15 +23,7 @@ theme = 'hugo-theme-m10c'
   author = "Ben Hattem"
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   menu_item_separator = " - "
-  avatar = "avatar.png"
   [[params.social]]
     icon = "brand-github"
     name = "Github"
     url = "https://github.com/anno4862"
-
-[params.style]
-  darkestColor = "#153032"
-  darkColor = "#1c2526"
-  lightColor = "#87b177"
-  lightestColor = "#ddd"
-  primaryColor = "#c8c42a"
