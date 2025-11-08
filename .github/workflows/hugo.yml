@@ -20,6 +20,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      HUGO_CACHEDIR: "${{ runner.temp }}/hugo_cache"
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -30,13 +32,32 @@ jobs:
           . ./.env
           echo "HUGO_VERSION=${HUGO_VERSION}" >> $GITHUB_ENV
           echo "TZ=${HUGO_TZ}" >> $GITHUB_ENV
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: '${{ env.HUGO_VERSION }}'
           extended: true
+      - name: Cache restore
+        id: cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: "${{ env.HUGO_CACHEDIR }}"
+          key: hugo-${{ github.run_id }}
       - name: Build Blog
-        run: hugo --minify
+        run: |
+          hugo \
+          --minify
+          --baseURL "${{ steps.pages.outputs.base_url }}/" \
+          --cacheDir "${{ env.HUGO_CACHEDIR }}"
+      - name: Cache save
+        id: cache-save
+        uses: actions/cache/save@v4
+        with:
+          path: "${{ env.HUGO_CACHEDIR }}"
+          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v4
