@@ -27,3 +27,7 @@ theme = 'hugo-m10c-benh'
     icon = "brand-github"
     name = "Github"
     url = "https://github.com/anno4862"
+  [[params.social]]
+    icon = "brand-linkedin"
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/benhattem/"
