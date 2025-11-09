@@ -10,3 +10,11 @@ Hello World! This is my second page...
 for i in range(10):
   print(f"[{i}] Hello World!")
 ```
+
+Lets make a list:
+
+- Item 1
+- Item 2
+- Item 3
+  - Item 3.1
+  - Item 3.2
