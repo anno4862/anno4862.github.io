@@ -23,6 +23,7 @@
 *.html              text diff=html
 *.map               text -diff
 *.md                text diff=markdown
+*.webmanifest       text
 *.toml              text
 *.xml               text
 *.yml               text
@@ -36,5 +37,6 @@
 #
 # Never perform LF normalization
 #
+*.ico               binary
 *.jpg               binary
 *.png               binary
