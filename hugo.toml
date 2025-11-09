@@ -11,7 +11,7 @@ theme = "hugo-m10c-benh"
 
 [params]
   author = "Ben Hattem"
-  description = "Ben's personal websit."
+  description = "Ben's personal website."
   menu_item_separator = " - "
   [[params.social]]
     icon = "brand-github"
